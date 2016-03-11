@@ -565,6 +565,7 @@ function avaliacao_digital_css_alter(&$css) {
   unset($css[drupal_get_path('module','webform').'/css/webform.css']);
   unset($css[drupal_get_path('module','shortcut').'/shortcut.css']);
 
-
+}
+function avaliacao_digital_js_alter(&$javascript){
 
 }

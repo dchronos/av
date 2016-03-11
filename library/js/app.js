@@ -191,6 +191,8 @@ jQuery(document).ready((function($){
     $("#page").hide();
     $('.result').hide();
     $('.finish').hide();
+    $('#page-top').hide();
+    $('#skip-link').hide();
 
     //As 4 primeiras perguntas
     $('.player').bind('keypress keyup blur',function() {

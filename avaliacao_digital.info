@@ -5,7 +5,6 @@ base theme = fusion_core
 core = 7.x
 engine = phptemplate
 
-stylesheets[all][] = css/avaliacao-digital-style.css
 stylesheets[all][] = library/css/style.css
 
 scripts[] = library/js/libs/modernizr.min.js
