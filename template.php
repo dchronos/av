@@ -531,3 +531,10 @@ function avaliacao_digital_theme_paths($theme) {
   $base_themes[$theme] = drupal_get_path('theme', $theme);   // Current theme path
   return $base_themes;
 }
+
+
+function avaliacao_digital_css_alter(&$css) {
+  unset($css[drupal_get_path('module','system').'/system.theme.css']);
+  unset($css[drupal_get_path('module','toolbar').'/toolbar.css']);
+  unset($css[drupal_get_path('theme','fusion').'/fusion_core/css/fusion-typography.css']);
+}
