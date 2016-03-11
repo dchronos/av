@@ -173,6 +173,57 @@ function avaliacao_digital_preprocess_html(&$vars) {
   // Add a unique page id.
   $vars['body_id'] = 'pid-' . drupal_clean_css_identifier(drupal_get_path_alias($_GET['q']));
 
+  //add meta
+  $meta1 = array(
+    '#tag' => 'meta',
+    '#attributes' => array(
+      'name' => 'application-name',
+      'content' => 'Avaliação Digital',
+    ),
+  );
+  $meta2 = array(
+    '#tag' => 'meta',
+    '#attributes' => array(
+      'name' => 'viewport',
+      'content' => 'width=device-width, minimal-ui',
+    ),
+  );
+  $meta3 =array(
+    '#tag' => 'meta',
+    '#attributes' => array(
+      'name' => 'mobile-web-app-capable',
+      'content' => 'yes',
+    ),
+  );
+  $meta4 =array(
+    '#tag' => 'meta',
+    '#attributes' => array(
+      'name' => 'apple-mobile-web-app-status-bar-style',
+      'content' => 'black',
+    ),
+  );
+  $meta5 =array(
+    '#tag' => 'meta',
+    '#attributes' => array(
+      'name' => 'author',
+      'content' => 'Resource - www.resourceit.com',
+    ),
+  );
+  $meta6 =array(
+    '#tag' => 'meta',
+    '#attributes' => array(
+      'name' => 'description',
+      'content' => 'black',
+    ),
+  );
+
+  drupal_add_html_head($meta1, 'application-name');
+  drupal_add_html_head($meta2, 'viewport');
+  drupal_add_html_head($meta3, 'mobile-web-app-capable');
+  drupal_add_html_head($meta4, 'apple-mobile-web-app-status-bar-style');
+  drupal_add_html_head($meta5, 'author');
+  drupal_add_html_head($meta6, 'description');
+
   // Update cache, if necessary.
   if ($new_cache) {
     cache_set('fusion', $new_cache, 'cache', CACHE_TEMPORARY);
@@ -567,5 +618,5 @@ function avaliacao_digital_css_alter(&$css) {
 
 }
 function avaliacao_digital_js_alter(&$javascript){
-
+  //unset($javascript[drupal_get_path('module','jquery_update').'/replace/jquery/1.10/jquery.js']);
 }
