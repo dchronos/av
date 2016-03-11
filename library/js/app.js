@@ -182,15 +182,15 @@ jQuery(document).ready((function($){
     if(pathname.length == 4){
         $("section.questions").hide();
         $("section.section-first").hide();
-        //$("#page").hide();
+        $("#page").hide();
         //$('.result').hide();
         //$('.finish').hide();
     }
 
     $("section.questions").hide();
-    //$("#page").hide();
-    //$('.result').hide();
-    //$('.finish').hide();
+    $("#page").hide();
+    $('.result').hide();
+    $('.finish').hide();
 
     //As 4 primeiras perguntas
     $('.player').bind('keypress keyup blur',function() {
