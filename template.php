@@ -536,5 +536,7 @@ function avaliacao_digital_theme_paths($theme) {
 function avaliacao_digital_css_alter(&$css) {
   unset($css[drupal_get_path('module','system').'/system.theme.css']);
   unset($css[drupal_get_path('module','toolbar').'/toolbar.css']);
-  unset($css[drupal_get_path('theme','fusion').'/fusion_core/css/fusion-typography.css']);
+  unset($css[drupal_get_path('theme','fusion_core').'/css/fusion-typography.css']);
+  unset($css[drupal_get_path('theme','fusion_core').'/css/grid16-960.css']);
+  unset($css[drupal_get_path('theme','fusion_core').'/css/fusion-style.css']);
 }
