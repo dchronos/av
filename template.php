@@ -538,8 +538,33 @@ function avaliacao_digital_css_alter(&$css) {
   unset($css[drupal_get_path('module','system').'/system.base.css']);
   unset($css[drupal_get_path('module','system').'/system.menus.css']);
   unset($css[drupal_get_path('module','system').'/system.messages.css']);
+
   unset($css[drupal_get_path('module','toolbar').'/toolbar.css']);
+
   unset($css[drupal_get_path('theme','fusion_core').'/css/fusion-typography.css']);
   unset($css[drupal_get_path('theme','fusion_core').'/css/grid16-960.css']);
   unset($css[drupal_get_path('theme','fusion_core').'/css/fusion-style.css']);
+  unset($css[drupal_get_path('theme','fusion_core').'/skins/core/fusion-core-skins.css']);
+
+
+  unset($css[drupal_get_path('module','jquery_update').'/replace/ui/themes/base/jquery.ui.core.css']);
+  unset($css[drupal_get_path('module','jquery_update').'/replace/ui/themes/base/jquery.ui.theme.css']);
+
+  unset($css[drupal_get_path('module','overlay').'/overlay-parent.css']);
+  unset($css[drupal_get_path('module','contextual').'/contextual.css']);
+
+
+  unset($css[drupal_get_path('module','comment').'/comment.css']);
+  unset($css[drupal_get_path('module','field').'/theme/field.css']);
+  unset($css[drupal_get_path('module','node').'/node.css']);
+  unset($css[drupal_get_path('module','search').'/search.css']);
+  unset($css[drupal_get_path('module','user').'/user.css']);
+  unset($css[drupal_get_path('module','views').'/css/views.css']);
+
+  unset($css[drupal_get_path('module','ctools').'/css/ctools.css']);
+  unset($css[drupal_get_path('module','webform').'/css/webform.css']);
+  unset($css[drupal_get_path('module','shortcut').'/shortcut.css']);
+
+
+
 }
