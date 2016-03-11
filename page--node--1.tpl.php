@@ -320,7 +320,7 @@ if(isset($node->webform['components'])) {
       print '  </form>';
       $class_btn = "btn-" . $id_name;
       if (($question + 1) == $form_size) {
-        dsm("The last is" . $value['name']);
+        //dsm("The last is" . $value['name']);
         print '<a href="javascript:void(0);" class="btn-start ' . $class_btn . '">Finalizar</a>';
       } else {
         print '  <a href="javascript:void(0);" class="btn-start btn-continue ' . $class_btn . '">Continuar</a>';
@@ -335,14 +335,14 @@ if(isset($node->webform['components'])) {
 
 <?php
   $path_args = arg();
-    dsm($path_args, "args");
+    //dsm($path_args, "args");
   $argumentos = count($path_args);
-dsm($argumentos);
+//dsm($argumentos);
 if($argumentos == 3){
   $nid = arg(1); // need to hard-code nid if this is a custom page
   $sid = $_GET['sid'];
   $submission = webform_get_submission($nid, $sid);
-  dsm($submission, "Submission");
+  //dsm($submission, "Submission");
   $total = 0;
   $count =0;
   foreach ($submission->data as $k => $v) {
@@ -355,11 +355,11 @@ if($argumentos == 3){
       else{
         $total += $valor[0];
       }
-      dsm($valor, "item");
+      //dsm($valor, "item");
     }
     $count ++;
   }
-  dsm($total,"total");
+  //dsm($total,"total");
 
 }
   //dsm($node, "vars");
