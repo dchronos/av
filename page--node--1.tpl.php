@@ -425,7 +425,7 @@ Portfólio Resource Digital: CRM, eCommerce, Marketing Digital, BI/BA, Big Data,
   <h3>A Resource é<span>Digital</span></h3>
   <p class="sub">Veja como podemos<br>te ajudar</p>
   <p><?php print $recomendacao?></p>
-  <a href="index.html" class="btn-start">Iniciar Novo</a>
+  <a href="<?php print '/node/' . $path_args[1]?>" class="btn-start">Iniciar Novo</a>
 </section>
 <!-- FINISH SECTION -->
 
