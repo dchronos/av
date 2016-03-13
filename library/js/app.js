@@ -81,8 +81,14 @@ function atualiza_pontos(level) {
             jQuery('.preloader').delay(1000).fadeOut('slow');
             jQuery('.preloader-result').delay(1000).fadeOut('slow');
             jQuery('.result-loader').delay(400).animate({width: porcentagem + '%'});
-            jQuery('.figures').delay(5300).animate({width: '100%', height: '70%', bottom: '0'});
-            jQuery('.figures figure').delay(5400).animate({top: '0', opacity: '1'});
+            //$('.figures').delay(5300).animate({width: '100%', height: '70%', bottom: '0'});
+            //$('.figures figure').delay(5400).animate({transform: transforms, opacity: '1'});
+            setTimeout(function () {
+                jQuery('.figures').addClass('open');
+            }, 5300);
+            setTimeout(function () {
+                jQuery('.figures figure').addClass('down');
+            }, 5400);
         },
 
         proximaEtapa: function() {
@@ -144,7 +150,11 @@ function atualiza_pontos(level) {
             });
             console.log(level.atual, "level");
 
-            jQuery('ul', '.stepbox').css({ left: (-jQuery('.stepbox ul li').outerWidth(true) * level.atual) + 'px' });
+            var transition = 'translateX(' + (-jQuery('.stepbox ul li').outerWidth(true) * level.atual) + 'px)';
+
+            jQuery('ul', '.stepbox').css(
+                { '-ms-transform': transition, '-webkit-transform': transition, 'transform': transition }
+            );
         },
 
         aoAbrirModal: function() {
