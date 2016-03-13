@@ -76,10 +76,11 @@ function atualiza_pontos(level) {
         },
         ajustarTela: function() {
             var calcWidth = jQuery('.stepbox ul li').outerWidth(true) * jQuery('.stepbox ul li').length;
+            var porcentagem = jQuery(".count").html();
             jQuery('.stepbox ul').width(calcWidth);
             jQuery('.preloader').delay(1000).fadeOut('slow');
             jQuery('.preloader-result').delay(1000).fadeOut('slow');
-            jQuery('.result-loader').delay(400).animate({width: '92%'});
+            jQuery('.result-loader').delay(400).animate({width: porcentagem + '%'});
             jQuery('.figures').delay(5300).animate({width: '100%', height: '70%', bottom: '0'});
             jQuery('.figures figure').delay(5400).animate({top: '0', opacity: '1'});
         },
