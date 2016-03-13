@@ -190,7 +190,7 @@ jQuery(document).ready((function($){
     }
     else{
         $("section.questions").hide();
-        //$("#page").hide();
+        $("#page").hide();
         $('.result').hide();
         $('.finish').hide();
         $('#page-top').hide();
