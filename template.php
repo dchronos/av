@@ -222,7 +222,7 @@ function avaliacao_digital_preprocess_html(&$vars) {
   drupal_add_html_head($meta3, 'mobile-web-app-capable');
   drupal_add_html_head($meta4, 'apple-mobile-web-app-status-bar-style');
   drupal_add_html_head($meta5, 'author');
-  drupal_add_html_head($meta6, 'description');
+  drupal_add_html_head($meta6, 'description ');
 
   // Update cache, if necessary.
   if ($new_cache) {

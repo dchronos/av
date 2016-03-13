@@ -67,14 +67,14 @@
  */
 ?>
 <!-- PRELOADER -->
-<div class="preloader">
-  <div class="loader">
-    <div class="circle one"></div>
-    <div class="circle two"></div>
-    <div class="circle three"></div>
-  </div>
-  <span class="logo-icon"></span>
-</div><!-- end.preloader -->
+<!--<div class="preloader">-->
+<!--  <div class="loader">-->
+<!--    <div class="circle one"></div>-->
+<!--    <div class="circle two"></div>-->
+<!--    <div class="circle three"></div>-->
+<!--  </div>-->
+<!--  <span class="logo-icon"></span>-->
+<!--</div><!-- end.preloader -->
 
 <!-- FIRST -->
 <section class="section-first">
@@ -220,50 +220,7 @@
 </aside>
 <!-- END MODAL -->
 
-<!-- MAIN Result -->
-<section class="main result medium"><!-- Adicionando as classes amateur, medium ou hard muda o nivel do ninja -->
 
-  <article class="main-top">
-    <div class="score"><h3>Score <span><b class="count">92</b> pts</span></h3></div>
-
-    <div class="figures">
-      <figure>Profissional</figure>
-    </div><!-- end.figures -->
-
-  </article><!-- end.main-top -->
-
-
-  <article class="main-bottom">
-
-    <div class="powerbar">
-
-                <span class="bar">
-                    <div class="result-loader loader">
-                      <span></span>
-                    </div>
-                </span><!-- end.bar -->
-
-    </div><!-- end.powerbar -->
-
-    <div class="content">
-      <p>Você já deu os primeiros passos, conte com a Resource Digital para avançar!</p>
-      <a href="#" class="btn-start recomendar" data-scroll="recomendacoes">Recomendações</a>
-      <span class="scroll bounce">Down</span>
-    </div>
-
-  </article><!-- end.main-bottom -->
-
-</section>
-<!-- END MAIN -->
-
-<!-- FINISH SECTION -->
-<section class="main finish" data-anchor="recomendacoes">
-  <h3>A Resource é<span>Digital</span></h3>
-  <p class="sub">Veja como podemos<br>te ajudar</p>
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate</p>
-  <a href="index.html" class="btn-start">Iniciar Novo</a>
-</section>
-<!-- FINISH SECTION -->
 
 <?php
 /*
@@ -334,10 +291,9 @@ if(isset($node->webform['components'])) {
 ?>
 
 <?php
-  $path_args = arg();
-    //dsm($path_args, "args");
-  $argumentos = count($path_args);
-//dsm($argumentos);
+$path_args = arg();
+//dsm($path_args, "args");
+$argumentos = count($path_args);
 if($argumentos == 3){
   $nid = arg(1); // need to hard-code nid if this is a custom page
   $sid = $_GET['sid'];
@@ -347,25 +303,133 @@ if($argumentos == 3){
   $count =0;
   foreach ($submission->data as $k => $v) {
     if($count > 3) {
-      $valor = explode("_", $v[0]);
-
-      if(count($valor) > 1){
-        $total += $valor[1];
+      if(count($v) > 1){
+        foreach($v as $j){
+          $valor = explode("_", $j);
+          if (count($valor) > 1) {
+            $total += $valor[1];
+          } else {
+            $total += $valor[0];
+          }
+        }
       }
-      else{
-        $total += $valor[0];
+      else {
+        $valor = explode("_", $v[0]);
+        if (count($valor) > 1) {
+          $total += $valor[1];
+        } else {
+          $total += $valor[0];
+        }
       }
       //dsm($valor, "item");
     }
     $count ++;
   }
   //dsm($total,"total");
+  //dsm(get_defined_vars(), "VARSS");
+  //dsm($path_args, "Argumentos");
+  //dsm($argumentos);
+  $node = node_load($path_args[1]);
+  //dsm($node, "Node");
+  $count = 0;
+  $somaDeTotais = 0;
+  foreach($node->webform['components'] as $k => $v){
+    if($count > 3){
+      if($v['extra']['multiple']){
+        $itens = explode(PHP_EOL,$v['extra']['items']);
+        foreach($itens as $k => $v){
+          $somaDeTotais += explode("_", explode("|", $v)[0])[1];
+          //dsm($itensValor, "Valores dos mutiplos");
+        }
+      }
+      else{
+        $somaDeTotais += explode("|", explode(PHP_EOL, $v['extra']['items'])[0])[0];
+      }
+    }
+    $count++;
+  }
+  //dsm($somaDeTotais, "SOMA");
+  //print "soma total é: ". $somaDeTotais . " pontos <br/>";
+  //print "pontos cadastrados é: " . $total ." pontos <br />";
 
+  $porcentagem = intval($total/$somaDeTotais * 100);
+
+  if($porcentagem < 25){
+    $ninja = "amateur";
+    $recomendacao = "Você é especialista em seu segmento e podemos ajudar apoiando desde a estratégia digital de sua empresa até a implementação com produtos e serviços que podem suportar a inovação de seu negócio.
+
+Portfolio Resource Digital: CRM, eCommerce, Marketing Digital, BI/BA, Big Data, Mobilidade, iOT, Design Thinking e Gestão do Conhecimento.";
+  }
+  else if($porcentagem < 50){
+    $ninja = "medium";
+    $recomendacao = "Legal! Você já deu os primeiros passos no mundo digital, podemos ajudar a acelerar o processo de inovação com nossos produtos e serviços.
+
+Portfólio Resource Resource Digital: CRM, eCommerce, Marketing Digital, BI/BA, Big Data, Mobilidade, iOT, Design Thinking e Gestão do Conhecimento.";
+  }
+  else if($porcentagem < 75){
+    $ninja = "medium";
+    $recomendacao = "Ótimo! Sua empresa está no caminho certo, o caminho digital. Quer apoio de um parceiro? Conte conosco.
+
+Portfólio Resource Digital: CRM, eCommerce, Marketing Digital, BI/BA, Big Data, Mobilidade, iOT, Design Thinking e Gestão do Conhecimento.";
+  }
+  else{
+    $ninja = "hard";
+    $recomendacao = "Sensacional! Você é Digital, lembre-se, continue inovando sempre, esteja sempre à frente da concorrência e conte com a Resource como parceiro de negócio.
+
+Portfólio Resource Digital: CRM, eCommerce, Marketing Digital, BI/BA, Big Data, Mobilidade, iOT, Design Thinking e Gestão do Conhecimento.
+";
+  }
 }
-  //dsm($node, "vars");
-  //dsm($page, "PAGES");
+//dsm($node, "vars");
+//dsm($page, "PAGES");
 
 ?>
+<!-- MAIN Result -->
+<section class="main result <?php print $ninja ?>"><!-- Adicionando as classes amateur, medium ou hard muda o nivel do ninja -->
+
+  <article class="main-top">
+    <div class="score"><h3>Score <span><b class="count"><?php print $porcentagem;?></b> pts</span></h3></div>
+
+    <div class="figures">
+      <figure>Profissional</figure>
+    </div><!-- end.figures -->
+
+  </article><!-- end.main-top -->
+
+
+  <article class="main-bottom">
+
+    <div class="powerbar">
+
+                <span class="bar">
+                    <div class="result-loader loader">
+                      <span></span>
+                    </div>
+                </span><!-- end.bar -->
+
+    </div><!-- end.powerbar -->
+
+    <div class="content">
+      <p>Você já deu os primeiros passos, conte com a Resource Digital para avançar!</p>
+      <a href="#" class="btn-start recomendar" data-scroll="recomendacoes">Recomendações</a>
+      <span class="scroll bounce">Down</span>
+    </div>
+
+  </article><!-- end.main-bottom -->
+
+</section>
+<!-- END MAIN -->
+
+<!-- FINISH SECTION -->
+<section class="main finish" data-anchor="recomendacoes">
+  <h3>A Resource é<span>Digital</span></h3>
+  <p class="sub">Veja como podemos<br>te ajudar</p>
+  <p><?php print $recomendacao?></p>
+  <a href="index.html" class="btn-start">Iniciar Novo</a>
+</section>
+<!-- FINISH SECTION -->
+
+
 <div id="page" class="page">
   <div id="page-inner" class="page-inner">
     <?php print render($page['header_top']); ?>
