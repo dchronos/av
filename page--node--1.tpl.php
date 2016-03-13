@@ -99,7 +99,7 @@
 <section class="main questions">
 
   <article class="main-top">
-    <h2>Pergunta <span>01</span></h2>
+    <h2> <span></span></h2>
   </article>
 
   <div class="main-parallax"></div>
