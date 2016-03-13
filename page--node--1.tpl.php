@@ -174,7 +174,7 @@
 
       <label>Power</label>
                 <span class="bar">
-                    <div class="loader" style="width: 5%;">
+                    <div class="loader loaderbar" style="width: 5%;">
                       <span></span>
                     </div>
                 </span><!-- end.bar -->

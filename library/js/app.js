@@ -245,6 +245,8 @@ jQuery(document).ready((function($){
             atualiza_pontos(level);
             console.log(level.totalPossivel, "Total Possivel");
             console.log(level.pontos, "Pontos");
+            console.log(Math.floor(level.pontos/level.totalPossivel*100), "Porcentagem");
+            jQuery(".loaderbar").attr("style", "width: "+ Math.floor(level.pontos/level.totalPossivel*100) +"%");
         });;
     });
 
