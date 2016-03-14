@@ -1661,6 +1661,10 @@ FORM
       border-radius: 100%; }
       .frame label.radio .fa {
         border-radius: 100%; }
+    @media only screen and (min-width: 768px) {
+      .frame label {
+        width: 2.8125em;
+        height: 2.8125em; } }
   .frame input:checked + label {
     background: #333; }
     .frame input:checked + label .fa {
@@ -1672,6 +1676,9 @@ FORM
     font-size: 1.25em;
     position: relative;
     top: -10px; }
+    @media only screen and (min-width: 768px) {
+      .frame .label {
+        font-size: 1.5625em; } }
 
 @-webkit-keyframes example {
   0% {
@@ -2226,6 +2233,9 @@ MODAL
     background: linear-gradient(-128deg, rgba(0, 198, 255, 0.96) 0%, rgba(0, 198, 255, 0.96) 1%, rgba(236, 15, 88, 0.96) 72%, rgba(236, 15, 88, 0.96) 100%); }
     .modal.modal-questions h3 {
       font-size: 1.5625em; }
+      @media only screen and (min-width: 768px) {
+        .modal.modal-questions h3 {
+          margin-bottom: 1.875em; } }
     .modal.modal-questions .btn-start {
       margin: 4.375em auto;
       width: 168px; }
@@ -2563,6 +2573,10 @@ MAIN
         left: -38px;
         width: 9.375em;
         height: 9.375em; }
+      @media only screen and (min-width: 768px) {
+        .main .stepbox .play {
+          right: 50px;
+          top: 100px; } }
   .main.result .main-top {
     background: #0585d9 no-repeat;
     background-size: contain;
