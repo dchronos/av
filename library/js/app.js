@@ -85,10 +85,10 @@ function atualiza_pontos(level) {
             //$('.figures figure').delay(5400).animate({transform: transforms, opacity: '1'});
             setTimeout(function () {
                 jQuery('.figures').addClass('open');
-            }, 5300);
+            }, 6500);
             setTimeout(function () {
                 jQuery('.figures figure').addClass('down');
-            }, 5400);
+            }, 6600);
         },
 
         proximaEtapa: function() {
@@ -150,7 +150,7 @@ function atualiza_pontos(level) {
             });
             console.log(level.atual, "level");
 
-            var transition = 'translateX(' + (-jQuery('.stepbox ul li').outerWidth(true) * level.atual) + 'px)';
+            var transition = 'translateZ(0) translateX(' + (-jQuery('.stepbox ul li').outerWidth(true) * level.atual) + 'px)';
 
             jQuery('ul', '.stepbox').css(
                 { '-ms-transform': transition, '-webkit-transform': transition, 'transform': transition }
@@ -170,8 +170,31 @@ function atualiza_pontos(level) {
         aoIniciar: function() {
             console.log("Level Atual6 ",level.atual);
 
-
             jQuery('#modal-' + jQuery(this).data('target')).addClass('open');
+            $("#cadastroForm").validate({
+                rules: {
+                    email: {
+                        required: true,
+                        email: true
+                    },
+                    whatsapp: {
+                        required: true
+                    },
+                },
+                messages: {
+                    email: "teste",
+                    whatsapp: "",
+
+                },
+                submitHandler: function(e) {
+                    console.log('Enviar');
+                }
+
+            });
+
+            $("#whatsapp").mask("(99) 99999-999?9").ready(function() {
+
+            });
 
         },
 
@@ -181,6 +204,10 @@ function atualiza_pontos(level) {
         }
     };
     jQuery(document).ready(level.inicializar());
+    
+    screen.orientation.lock('portrait').catch(function() {
+        console.log('Orientation locked');
+    });
 }();
 
 jQuery(document).ready((function($){
