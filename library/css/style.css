@@ -1746,12 +1746,12 @@ PARALLAX
 
 @-webkit-keyframes future2 {
   0% {
-    -webkit-transform: translateZ(0) translateX(-100%);
-    transform: translateZ(0) translateX(-100%); }
+    -webkit-transform: translateZ(0) translateX(-100%) rotate(90deg);
+    transform: translateZ(0) translateX(-100%) rotate(90deg); }
 
   100% {
-    -webkit-transform: translateZ(0) translateX(100%);
-    transform: translateZ(0) translateX(100%); } }
+    -webkit-transform: translateZ(0) translateX(200%) rotate(90deg);
+    transform: translateZ(0) translateX(200%) rotate(90deg); } }
 
 /*====================================================================
 PLAY
@@ -2047,6 +2047,10 @@ PAGE START
     position: absolute;
     right: 0;
     z-index: 120; }
+    @media only screen and (min-width: 768px) {
+      .section-first .logo-avaliacao {
+        height: 226px;
+        width: 510px; } }
   .section-first .parallax {
     border-radius: 100%;
     background: #ec0f58;
@@ -2059,6 +2063,11 @@ PAGE START
     right: 0;
     width: 210px;
     z-index: 80; }
+    @media only screen and (min-width: 768px) {
+      .section-first .parallax {
+        height: 315px;
+        bottom: 170px;
+        width: 315px; } }
   .section-first .columns {
     height: 100%;
     padding: 0;
@@ -2068,6 +2077,9 @@ PAGE START
       bottom: 100px;
       position: absolute;
       z-index: 90; }
+      @media only screen and (min-width: 768px) {
+        .section-first .columns .ilustra {
+          bottom: 150px; } }
     .section-first .columns.past {
       background-color: #1e2020;
       background: url(../images/bg-past.jpg) right top no-repeat;
@@ -2083,6 +2095,11 @@ PAGE START
         width: 150px;
         right: -10px;
         shape-rendering: optimizeSpeed; }
+        @media only screen and (min-width: 768px) {
+          .section-first .columns.past .ilustra {
+            height: 450px;
+            right: -20px;
+            width: 225px; } }
     .section-first .columns.future {
       background-color: #01161a;
       background: url(../images/bg-future.jpg) left top no-repeat;
@@ -2098,6 +2115,11 @@ PAGE START
         width: 150px;
         left: -18px;
         shape-rendering: optimizeSpeed; }
+        @media only screen and (min-width: 768px) {
+          .section-first .columns.future .ilustra {
+            height: 450px;
+            left: -28px;
+            width: 225px; } }
   .section-first .start {
     -webkit-animation-name: example;
     /* Chrome, Safari, Opera */
@@ -2238,6 +2260,7 @@ MAIN
       background: #fff;
       height: 42%; }
       .main article.main-top h2 {
+        display: none;
         font-family: 'Klinic Slab Book', sans-serif;
         font-size: 1.875em;
         line-height: 32px;
@@ -2428,6 +2451,7 @@ MAIN
       .main .stepbox .step .future {
         display: none;
         background: url('../images/future.svg') no-repeat;
+        background-size: contain;
         display: block;
         position: absolute;
         shape-rendering: optimizeSpeed; }
@@ -2455,9 +2479,6 @@ MAIN
           backface-visibility: hidden;
           -webkit-perspective: 1000;
           perspective: 1000;
-          -webkit-transform: rotate(90deg);
-          -ms-transform: rotate(90deg);
-              transform: rotate(90deg);
           -webkit-animation-name: future2;
           /* Chrome, Safari, Opera */
           -webkit-animation-duration: 10s;
