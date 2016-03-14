@@ -160,6 +160,36 @@ function atualiza_pontos(level) {
         aoAbrirModal: function() {
             console.log("Level Atual5 ",level.atual);
             jQuery('.modal-start').toggleClass('open');
+
+
+            jQuery("#leadform").validate({
+                rules: {
+                    email: {
+                        required: true,
+                        email: true
+                    },
+                    whatsapp: {
+                        required: false
+                    },
+                },
+                messages: {
+                    email: "teste",
+                    whatsapp: "",
+
+                },
+                submitHandler: function(e) {
+                    //var a = $(e).serialize();
+                    console.log("OK Submit");
+                    jQuery('.modal').removeClass('open');
+                    jQuery("section.questions").show();
+                    jQuery(".section-first").hide();
+                }
+
+            });
+
+            jQuery(".whatsapp").mask("(99) 99999-999?9").ready(function() {
+
+            });
         },
 
         aoFecharModal: function() {
@@ -171,30 +201,7 @@ function atualiza_pontos(level) {
             console.log("Level Atual6 ",level.atual);
 
             jQuery('#modal-' + jQuery(this).data('target')).addClass('open');
-            $("#cadastroForm").validate({
-                rules: {
-                    email: {
-                        required: true,
-                        email: true
-                    },
-                    whatsapp: {
-                        required: true
-                    },
-                },
-                messages: {
-                    email: "teste",
-                    whatsapp: "",
 
-                },
-                submitHandler: function(e) {
-                    console.log('Enviar');
-                }
-
-            });
-
-            $("#whatsapp").mask("(99) 99999-999?9").ready(function() {
-
-            });
 
         },
 
@@ -204,7 +211,7 @@ function atualiza_pontos(level) {
         }
     };
     jQuery(document).ready(level.inicializar());
-    
+
     screen.orientation.lock('portrait').catch(function() {
         console.log('Orientation locked');
     });
@@ -257,9 +264,9 @@ jQuery(document).ready((function($){
     });
 
     $('.btn-start-main').bind('click',function() {
-        $('.modal').removeClass('open');
-        $("section.questions").show();
-        $(".section-first").hide();
+        //$('.modal').removeClass('open');
+        //$("section.questions").show();
+        //$(".section-first").hide();
     });
 
 

@@ -191,7 +191,7 @@
 <aside class="modal modal-start">
   <h3>Sua empresa é digital?<br>Você vai descobrir.</h3>
 
-  <form class="modal-form" autocomplete="off">
+  <form id="leadform" class="modal-form" autocomplete="off">
 
     <div class="input-group">
       <input class="field player" type="text" name="player" tabindex="1">
@@ -213,7 +213,7 @@
       <label><span class="label-content">Email</span></label>
     </div><!-- end.input-group -->
 
-    <a href="javascript:void(0)" class="btn-start btn-start-main" tabindex="5">Começar</a>
+    <button type="submit" href="javascript:void(0)" class="btn-start btn-start-main" tabindex="5">Começar</button>
 
   </form>
   <?php //print render($page['content']); ?>
@@ -530,3 +530,4 @@ Portfólio Resource Digital: CRM, eCommerce, Marketing Digital, BI/BA, Big Data,
 </div><!-- /page -->
 <script src="/sites/all/themes/avaliacao_digital/library/js/libs/classie.js"></script>
 <script src="/sites/all/themes/avaliacao_digital/library/js/app.js"></script>
+<script src="/sites/all/themes/avaliacao_digital/library/js/libs/form.validate.min.js"></script>

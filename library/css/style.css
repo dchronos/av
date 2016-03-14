@@ -2203,7 +2203,7 @@ MODAL
     background: -webkit-linear-gradient(218deg, rgba(0, 198, 255, 0.96) 0%, rgba(0, 198, 255, 0.96) 1%, rgba(236, 15, 88, 0.96) 72%, rgba(236, 15, 88, 0.96) 100%);
     background: linear-gradient(-128deg, rgba(0, 198, 255, 0.96) 0%, rgba(0, 198, 255, 0.96) 1%, rgba(236, 15, 88, 0.96) 72%, rgba(236, 15, 88, 0.96) 100%); }
     .modal.modal-questions h3 {
-      font-size: 2.1875em; }
+      font-size: 1.5625em; }
     .modal.modal-questions .btn-start {
       margin: 4.375em auto;
       width: 168px; }
@@ -2232,11 +2232,11 @@ MAIN
   height: 100%;
   position: relative; }
   .main article {
-    height: 50%;
     text-transform: uppercase;
     width: 100%; }
     .main article.main-top {
-      background: #fff; }
+      background: #fff;
+      height: 42%; }
       .main article.main-top h2 {
         font-family: 'Klinic Slab Book', sans-serif;
         font-size: 1.875em;
@@ -2263,6 +2263,7 @@ MAIN
         z-index: 1000; }
     .main article.main-bottom {
       background: #1f2027;
+      height: 58%;
       position: relative;
       overflow: hidden; }
       .main article.main-bottom .pin {
@@ -2274,7 +2275,7 @@ MAIN
         text-indent: -99999px;
         shape-rendering: optimizeSpeed;
         width: 100px;
-        bottom: -40px;
+        bottom: 0;
         left: -20px;
         margin: auto;
         position: absolute;
@@ -2349,7 +2350,7 @@ MAIN
         height: auto;
         overflow: hidden; }
   .main .main-parallax {
-    background: url('../images/parallax.png') no-repeat 0 center;
+    background: url('../images/parallax.png') no-repeat center 42%;
     background-size: contain;
     height: 100%;
     position: absolute;
@@ -2360,7 +2361,7 @@ MAIN
     height: 100%;
     position: fixed;
     overflow-x: hidden;
-    top: 0;
+    top: -8%;
     width: 100%;
     z-index: 300; }
     .main .stepbox ul {
@@ -2411,7 +2412,19 @@ MAIN
           -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
           -webkit-perspective: 1000;
-          perspective: 1000; }
+          perspective: 1000;
+          -webkit-animation-name: cloud;
+          /* Chrome, Safari, Opera */
+          -webkit-animation-duration: 60s;
+          /* Chrome, Safari, Opera */
+          -webkit-animation-iteration-count: infinite;
+          /* Chrome, Safari, Opera */
+          -webkit-animation-name: cloud;
+                  animation-name: cloud;
+          -webkit-animation-duration: 60s;
+                  animation-duration: 60s;
+          -webkit-animation-iteration-count: infinite;
+                  animation-iteration-count: infinite; }
       .main .stepbox .step .future {
         display: none;
         background: url('../images/future.svg') no-repeat;
@@ -2423,6 +2436,18 @@ MAIN
           backface-visibility: hidden;
           -webkit-perspective: 1000;
           perspective: 1000;
+          -webkit-animation-name: future;
+          /* Chrome, Safari, Opera */
+          -webkit-animation-duration: 10s;
+          /* Chrome, Safari, Opera */
+          -webkit-animation-iteration-count: infinite;
+          /* Chrome, Safari, Opera */
+          -webkit-animation-name: future;
+                  animation-name: future;
+          -webkit-animation-duration: 10s;
+                  animation-duration: 10s;
+          -webkit-animation-iteration-count: infinite;
+                  animation-iteration-count: infinite;
           height: 350px;
           width: 250px; }
         .main .stepbox .step .future.parallax-2 {
@@ -2433,6 +2458,18 @@ MAIN
           -webkit-transform: rotate(90deg);
           -ms-transform: rotate(90deg);
               transform: rotate(90deg);
+          -webkit-animation-name: future2;
+          /* Chrome, Safari, Opera */
+          -webkit-animation-duration: 10s;
+          /* Chrome, Safari, Opera */
+          -webkit-animation-iteration-count: infinite;
+          /* Chrome, Safari, Opera */
+          -webkit-animation-name: future2;
+                  animation-name: future2;
+          -webkit-animation-duration: 10s;
+                  animation-duration: 10s;
+          -webkit-animation-iteration-count: infinite;
+                  animation-iteration-count: infinite;
           height: 350px;
           width: 150px; }
       .main .stepbox .step.step1 {
@@ -2440,7 +2477,7 @@ MAIN
         background-color: #7affdf; }
       .main .stepbox .step.step2 {
         background-image: url('../images/step2.svg');
-        background-color: #7de3ff; }
+        background-color: #f2b579; }
       .main .stepbox .step.step3 {
         background-image: url('../images/step3.svg');
         background-color: #ffac04; }
@@ -2471,7 +2508,7 @@ MAIN
       height: 5.3125em;
       position: absolute;
       right: 20px;
-      top: 20px;
+      top: 5px;
       width: 5.3125em;
       z-index: 100; }
       .main .stepbox .play:before {
