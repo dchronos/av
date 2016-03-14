@@ -67,14 +67,14 @@
  */
 ?>
 <!-- PRELOADER -->
-<!--<div class="preloader">-->
-<!--  <div class="loader">-->
-<!--    <div class="circle one"></div>-->
-<!--    <div class="circle two"></div>-->
-<!--    <div class="circle three"></div>-->
-<!--  </div>-->
-<!--  <span class="logo-icon"></span>-->
-<!--</div><!-- end.preloader -->
+<div class="preloader">
+  <div class="loader">
+    <div class="circle one"></div>
+    <div class="circle two"></div>
+    <div class="circle three"></div>
+  </div>
+  <span class="logo-icon"></span>
+</div><!-- end.preloader
 
 <!-- FIRST -->
 <section class="section-first">
