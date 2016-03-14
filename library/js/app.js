@@ -212,9 +212,9 @@ function atualiza_pontos(level) {
     };
     jQuery(document).ready(level.inicializar());
 
-    screen.orientation.lock('portrait').catch(function() {
-        console.log('Orientation locked');
-    });
+    //screen.orientation.lock('portrait').catch(function() {
+    //    console.log('Orientation locked');
+    //});
 }();
 
 jQuery(document).ready((function($){
