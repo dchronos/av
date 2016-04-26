@@ -82,21 +82,45 @@
   <h1 class="logo">Resource IT Solutions</h1>
   <h2 class="logo-avaliacao">Avaliação Digital</h2>
   <span class="parallax"></span>
+  <a href="javascript:void(0);" class="start go">start</a>
+  <svg class="go" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 284 103">
+    <path stroke-width="1" d="M816.988,958.822V902.915l19.7-19.764H844.1l18.107-18.16H1070.83l12.08,12.107v30.268l18.1,18.161-42.33,42.464H999.741l-12.072-12.107H880.536l-7.631,7.656H821.689Z" transform="translate(-817 -865)"/>
+  </svg>
 
   <div class="small-6 columns past">
+    <figure class="ilustra"></figure>
+    <div class="elements">
+      <div class="parallax-1"></div>
+      <div class="parallax-2"></div>
+      <div class="parallax-3"></div>
+      <div class="parallax-4"></div>
+      <div class="parallax-5"></div>
+      <div class="parallax-6"></div>
+      <div class="last-parallax"></div>
+      <canvas id="aguia" width="550" height="400"></canvas>
+    </div>
     <figure class="ilustra"></figure>
   </div><!-- end.past -->
 
   <div class="small-6 columns future">
+    <div class="elements">
+      <div class="parallax-1"></div>
+      <div class="parallax-2"></div>
+      <div class="parallax-3"></div>
+      <div class="parallax-4"></div>
+      <div class="parallax-5"></div>
+      <div class="parallax-6"></div>
+      <div class="parallax-7"></div>
+      <div class="parallax-8"></div>
+    </div>
     <figure class="ilustra"></figure>
-    <a href="javascript:void(0)" class="start">start</a>
   </div><!-- end.future -->
 
 </section><!-- end.row -->
 <!-- END FIRST -->
 
 <!-- MAIN -->
-<section class="main questions">
+<section class="main levels">
 
   <article class="main-top">
     <h2> <span></span></h2>
@@ -106,59 +130,63 @@
 
   <div class="stepbox">
 
+    <span class="pin-animate">
+                <canvas id="ninja" width="663" height="483"></canvas>
+            </span>
+
     <ul>
-      <li>
+      <li class="select" id="level-1">
+        <a href="#" class="play" data-target="1"></a>
         <div class="step step1">
-          <a href="#" class="play" data-target="1"></a>
           <span class="cloud parallax-1"></span>
         </div>
       </li>
 
-      <li>
+      <li id="level-2">
+        <a href="#" class="play" data-target="2"></a>
         <div class="step step2">
-          <a href="#" class="play" data-target="2"></a>
           <span class="cloud parallax-1"></span>
         </div>
       </li>
 
-      <li>
+      <li id="level-3">
+        <a href="#" class="play" data-target="3"></a>
         <div class="step step3">
-          <a href="#" class="play" data-target="3"></a>
           <span class="cloud parallax-1"></span>
         </div>
       </li>
 
-      <li>
+      <li id="level-4">
+        <a href="#" class="play" data-target="4"></a>
         <div class="step step4">
-          <a href="#" class="play" data-target="4"></a>
           <span class="cloud parallax-1"></span>
         </div>
       </li>
 
-      <li>
+      <li id="level-5">
+        <a href="#" class="play" data-target="5"></a>
         <div class="step step5">
-          <a href="#" class="play" data-target="5"></a>
           <span class="cloud parallax-1"></span>
         </div>
       </li>
 
-      <li>
+      <li id="level-6">
+        <a href="#" class="play" data-target="6"></a>
         <div class="step step6">
-          <a href="#" class="play" data-target="6"></a>
           <span class="cloud parallax-1"></span>
         </div>
       </li>
 
-      <li>
+      <li id="level-7">
+        <a href="#" class="play" data-target="7"></a>
         <div class="step step7">
-          <a href="#" class="play" data-target="7"></a>
           <span class="cloud parallax-1"></span>
         </div>
       </li>
 
-      <li>
+      <li id="level-8">
+        <a href="#" class="play" data-target="8"></a>
         <div class="step step8">
-          <a href="#" class="play" data-target="8"></a>
           <span class="future parallax-1"></span>
           <span class="future parallax-2"></span>
         </div>
@@ -187,38 +215,47 @@
 <!-- END MAIN -->
 
 
-<!-- MODAL -->
+<!-- MODAL START -->
 <aside class="modal modal-start">
-  <h3>Sua empresa é digital?<br>Você vai descobrir.</h3>
 
-  <form id="leadform" class="modal-form" autocomplete="off">
+  <form class="modal-form" id="cadastroForm" autocomplete="off">
+
+    <h3>Sua empresa é digital?<br>Você vai descobrir.</h3>
 
     <div class="input-group">
-      <input class="field player" type="text" name="player" tabindex="1">
+      <input class="field" type="text" name="player" tabindex="1">
       <label><span class="label-content">Player 1</span></label>
     </div><!-- end.input-group -->
 
     <div class="input-group">
-      <input class="field empresa" type="text" name="empresa" tabindex="2">
+      <input class="field" type="text" name="empresa" tabindex="2">
       <label><span class="label-content">Empresa</span></label>
     </div><!-- end.input-group -->
 
     <div class="input-group">
-      <input class="field whatsapp" type="text" name="whatsapp" tabindex="3">
+      <input class="field" type="text" name="whatsapp" tabindex="3" id="whatsapp">
       <label><span class="label-content">Whatsapp</span></label>
     </div><!-- end.input-group -->
 
     <div class="input-group">
-      <input class="field email" type="text" name="email" tabindex="4">
+      <input class="field" type="text" name="email" tabindex="4">
       <label><span class="label-content">Email</span></label>
     </div><!-- end.input-group -->
 
-    <button type="submit" href="javascript:void(0)" class="btn-start btn-start-main" tabindex="5">Começar</button>
+    <button class="btn-start" tabindex="5">
+      <span>Começar</span>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 153 43">
+        <g>
+          <path d="M132.2,43H2V27.9l3.9-3.8V7.3l5.7-5.5h133.1l-6,7.1v27.6L132.2,43z M3.8,41.2h127.7l5.4-5.4V8.3l3.9-4.6H12.3
+                            L7.8,8.1v16.7l-3.9,3.8V41.2z">
+        </g>
+      </svg>
+    </button>
 
   </form>
-  <?php //print render($page['content']); ?>
+
 </aside>
-<!-- END MODAL -->
+<!-- END MODAL START -->
 
 
 
@@ -232,6 +269,7 @@ if(isset($node->webform['components'])) {
 //dsm($node->webform['components'], "node");
 //dsm($form_size, "Size of form");
 
+  $datanext = 2;
   foreach ($node->webform['components'] as $key => $value) {
     if ($question > 3) {
       $level = $question - 3;
@@ -274,15 +312,21 @@ if(isset($node->webform['components'])) {
           }
         }
       }
-      print '  </form>';
       $class_btn = "btn-" . $id_name;
       if (($question + 1) == $form_size) {
         //dsm("The last is" . $value['name']);
-        print '<a href="javascript:void(0);" class="btn-start ' . $class_btn . '">Finalizar</a>';
+        print '<a href="javascript:void(0);" class="btn-start ' . $class_btn . '"><span>Finalizar</span>';
       } else {
-        print '  <a href="javascript:void(0);" class="btn-start btn-continue ' . $class_btn . '">Continuar</a>';
+        print '  <a href="javascript:void(0);" class="btn-start btn-continue" data-next="'. $datanext .'"><span>Continuar</span>';
       }
-
+      print '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 153 43">';
+      print '<g>';
+      print '<path d="M132.2,43H2V27.9l3.9-3.8V7.3l5.7-5.5h133.1l-6,7.1v27.6L132.2,43z M3.8,41.2h127.7l5.4-5.4V8.3l3.9-4.6H12.3';
+      print 'L7.8,8.1v16.7l-3.9,3.8V41.2z">';
+      print '</g>';
+      print '</svg>';
+      print '</a>';
+      print '  </form>';
       print '</aside>';
     }
     $question++;
@@ -528,6 +572,8 @@ Portfólio Resource Digital: CRM, eCommerce, Marketing Digital, BI/BA, Big Data,
     <?php print render($page['footer']); ?>
   </div><!-- /page-inner -->
 </div><!-- /page -->
-<script src="/sites/all/themes/avaliacao_digital/library/js/libs/classie.js"></script>
+
+<script src="/sites/all/themes/avaliacao_digital/library/js/libs/jquery.min.js"></script>
+<script src="/sites/all/themes/avaliacao_digital/library/js/libs/create.min.js"></script>
+<script src="/sites/all/themes/avaliacao_digital/library/js/libs/libs.min.js"></script>
 <script src="/sites/all/themes/avaliacao_digital/library/js/app.js"></script>
-<script src="/sites/all/themes/avaliacao_digital/library/js/libs/form.validate.min.js"></script>

@@ -34,8 +34,8 @@ function atualiza_pontos(level) {
         inicializar: function() {
             level.configurar();
             level.registrarAcoes();
-            level.inicializarMatrix();
 
+            level.inicializarMatrix();
             console.log(level.matrix, "Matrix");
         },
 
@@ -79,8 +79,94 @@ function atualiza_pontos(level) {
             var porcentagem = jQuery(".count").html();
             jQuery('.stepbox ul').width(calcWidth);
             jQuery('.preloader').delay(1000).fadeOut('slow');
+
+            jQuery('.elements .parallax-1').delay(5200).animate({bottom: '-1px'});
+            setTimeout(function () {
+                jQuery('.section-first .parallax, .logo-avaliacao').addClass('animate');
+            }, 5100);
+            setTimeout(function () {
+                jQuery('.section-first').addClass('go');
+            }, 5400);
+
+            //FUTURE ANIMATE
+            jQuery('.future .elements .parallax-2, .future .elements .parallax-3').delay(5000).animate({bottom: '30px'});
+            jQuery('.future .elements .parallax-4').delay(5300).animate({bottom: '130px'});
+            jQuery('.future .elements .parallax-5').delay(5300).animate({bottom: '120px'});
+            jQuery('.future .elements .parallax-6').delay(5300).animate({bottom: '220px'});
+            setTimeout(function () {
+                jQuery('.parallax-7, .parallax-8').addClass('animate');
+            }, 8300);
+            setTimeout(function () {
+                jQuery('.future .ilustra').addClass('animate');
+            }, 5300);
+
+            //PAST ANIMATE
+            jQuery('.past .elements .parallax-2').delay(5300).animate({bottom: '25px'});
+            jQuery('.past .elements .parallax-3').delay(5300).animate({bottom: '100px'});
+            jQuery('.past .elements .parallax-4').delay(5300).animate({bottom: '165px'});
+            jQuery('.past .elements .parallax-5, .past .elements .parallax-6').delay(5300).animate({bottom: '140px'});
+            jQuery('.past .elements .last-parallax').delay(5300).animate({bottom: '240px'});
+            setTimeout(function () {
+                jQuery('.past').addClass('animate');
+            }, 5300);
+            setTimeout(function () {
+                jQuery('.past .ilustra').addClass('animate');
+            }, 5300);
+            setTimeout(function () {
+                jQuery('#aguia').addClass('animate');
+            }, 6300);
+
+
+
             jQuery('.preloader-result').delay(1000).fadeOut('slow');
             jQuery('.result-loader').delay(400).animate({width: porcentagem + '%'});
+
+            jQuery('.result .content, .finish article').delay(7000).animate({opacity: '1', transition: 'opacity .2s ease-out' });
+            setTimeout(function () {
+                jQuery('.figures').addClass('open');
+            }, 6500);
+            setTimeout(function () {
+                jQuery('.figures figure').addClass('down');
+            }, 6600);
+            jQuery('.count').each(function () {
+                jQuery(this).prop('Counter',0).animate({
+                    Counter: jQuery(this).text(),
+                }, {
+                    duration: 7000,
+                    easing: 'swing',
+                    step: function (now) {
+                        jQuery(this).text(Math.ceil(now));
+                    }
+                });
+
+            });
+
+            var window = jQuery(window),
+                html = jQuery('.ilustra');
+
+            function resize() {
+                if (jQuery.window.width() < 1024) {
+                    return jQuery.html.removeClass('animate');
+                }
+
+                jQuery.html.addClass('animate');
+            }
+
+            window.resize(resize).trigger('resize');
+
+            jQuery('.recomendar').on('click', function() {
+
+                var scrollAnchor = jQuery(this).attr('data-scroll'),
+                    scrollPoint = jQuery('section[data-anchor="' + scrollAnchor + '"]').offset().top + 0;
+
+                jQuery('body,html').animate({
+                    scrollTop: scrollPoint
+                }, 500);
+
+                return false;
+
+            });
+
             //$('.figures').delay(5300).animate({width: '100%', height: '70%', bottom: '0'});
             //$('.figures figure').delay(5400).animate({transform: transforms, opacity: '1'});
             setTimeout(function () {
@@ -140,11 +226,14 @@ function atualiza_pontos(level) {
             console.log(level.matrix, "Matrix");
 
             level.matrix.forEach(function(value){
+                console.log(value);
+                console.log("Level Atual pre upate: " + level.atual);
                 if(value.seqItem > (level.atual + 4)){
                     if(value.status){
                         level.atual = value.seqItem - 4;
                         console.log(level.atual,"LEvel atual");
                         level.matrix.length = 0;
+                        return 0;
                     }
                 }
             });
@@ -159,37 +248,61 @@ function atualiza_pontos(level) {
 
         aoAbrirModal: function() {
             console.log("Level Atual5 ",level.atual);
-            jQuery('.modal-start').toggleClass('open');
+            console.log("aoAbrirModal Start");
+            jQuery('.modal-start, .section-first').toggleClass('open');
 
 
-            jQuery("#leadform").validate({
+            jQuery("#cadastroForm").validate({
                 rules: {
                     email: {
-                        required: true,
+                        //required: true,
                         email: true
                     },
-                    whatsapp: {
-                        required: false
-                    },
+                    /*whatsapp: {
+                     required: true
+                     },*/
                 },
                 messages: {
                     email: "teste",
-                    whatsapp: "",
+                    //whatsapp: "",
 
                 },
                 submitHandler: function(e) {
-                    //var a = $(e).serialize();
-                    console.log("OK Submit");
-                    jQuery('.modal').removeClass('open');
+                    console.log("submitHandler");
                     jQuery("section.questions").show();
-                    jQuery(".section-first").hide();
+                    jQuery(".modal-start").removeClass('open'),
+                        jQuery(".section-first").addClass('next'),
+                        jQuery(".main").addClass('open');
+
+
+                    if( /Android|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+                        // some code..
+                    } else {
+
+                        function initNinja() {
+
+                            createjs.MotionGuidePlugin.install();
+                            canvas = document.getElementById("ninja");
+                            exportRoot = new lib.NinjaFase();
+
+                            stage = new createjs.Stage(canvas);
+                            stage.addChild(exportRoot);
+                            stage.update();
+                            createjs.Ticker.setFPS(lib.properties.fps);
+                            createjs.Ticker.addEventListener("tick", stage);
+                        }
+
+                        setTimeout(function () {
+                            initNinja();
+                        }, 2000);
+
+                    }
+
                 }
 
             });
 
-            jQuery(".whatsapp").mask("(99) 99999-999?9").ready(function() {
-
-            });
+            jQuery("#whatsapp").mask("(99) 99999-999?9").ready();
         },
 
         aoFecharModal: function() {
@@ -206,12 +319,41 @@ function atualiza_pontos(level) {
         },
 
         aoContinuar: function() {
+            jQuery('.select').removeClass('select');
             jQuery(this).closest('.modal').removeClass('open');
+            jQuery('#level-' + $(this).data('next')).addClass('select');
             setTimeout(level.proximaEtapa, 150);
         }
     };
     jQuery(document).ready(level.inicializar());
+    if( /Android|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+        // some code..
+    } else
+    {
+        //Now include js files
+        var canvas, stage, exportRoot;
+        var canvas2, stage2, exportRoot2;
+        function init() {
+            // --- write your JS code here ---
 
+            createjs.MotionGuidePlugin.install();
+
+            canvas2 = document.getElementById("aguia");
+            exportRoot2 = new lib.aguia2();
+
+            stage2 = new createjs.Stage(canvas2);
+            stage2.addChild(exportRoot2);
+            stage2.update();
+
+            createjs.Ticker.setFPS(lib.properties.fps);
+            createjs.Ticker.addEventListener("tick", stage2);
+        }
+
+        window.onload = function(){
+            init();
+        };
+
+    }
     //screen.orientation.lock('portrait').catch(function() {
     //    console.log('Orientation locked');
     //});
@@ -226,16 +368,16 @@ jQuery(document).ready((function($){
     console.log(pathname, "TECT");
     if(pathname.length == 4){
         $("section.questions").hide();
-        $("section.section-first").hide();
-        $("#page").hide();
-        //$('.result').hide();
-        //$('.finish').hide();
+        //$("section.section-first").hide();
+        //$("#page").hide();
+        $('.result').hide();
+        $('.finish').hide();
         $('#page-top').hide();
         $('#skip-link').hide();
     }
     else{
         $("section.questions").hide();
-        $("#page").hide();
+        //$("#page").hide();
         $('.result').hide();
         $('.finish').hide();
         $('#page-top').hide();
@@ -245,16 +387,16 @@ jQuery(document).ready((function($){
 
 
     //As 4 primeiras perguntas
-    $('.player').bind('keypress keyup blur',function() {
+    $('input[name="player"]').bind('keypress keyup blur',function() {
         $('#edit-submitted-pergunta-1').val($(this).val());
     });
-    $('.empresa').bind('keypress keyup blur',function() {
+    $('input[name="empresa"]').bind('keypress keyup blur',function() {
         $('#edit-submitted-empresa').val($(this).val());
     });
-    $('.whatsapp').bind('keypress keyup blur',function() {
+    $('input[name="whatsapp"').bind('keypress keyup blur',function() {
         $('#edit-submitted-whatsapp').val($(this).val());
     });
-    $('.email').bind('keypress keyup blur',function() {
+    $('input[name="email"').bind('keypress keyup blur',function() {
         $('#edit-submitted-email').val($(this).val());
     });
     $('.btn-possui-alguma-iniciativa-relacionada-a').bind('click',function() {
@@ -263,11 +405,7 @@ jQuery(document).ready((function($){
 
     });
 
-    $('.btn-start-main').bind('click',function() {
-        //$('.modal').removeClass('open');
-        //$("section.questions").show();
-        //$(".section-first").hide();
-    });
+    // btn-start
 
 
     $("input[id^=edit-submitted]").each(function(value){
@@ -278,9 +416,9 @@ jQuery(document).ready((function($){
         //};
         var modalValue = $(this).attr("id").replace("edit-submitted-","modalfront-");
         var drupalValue = $(this).attr("id");
-        console.log(modalValue);
+        console.log("Modal Value",modalValue);
         $("#" + modalValue).on('keypress keyup blur click change',function() {
-            //console.log("CLICK!!");
+            console.log("CLICK!!");
             var valor = 0;
             $("#" + drupalValue).prop("checked", true).trigger("change");
             valor = $("#" + drupalValue).val();
