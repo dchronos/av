@@ -15,7 +15,7 @@ function atualiza_pontos(level) {
                 valor = parseInt(jQuery(this).val().split('_')[1]);
                 level.totalPossivel += valor;
                 if (jQuery(this).is(':checked')) {
-                    //console.log(jQuery(this).val().split('_')[1]);
+                    ////console.log(jQuery(this).val().split('_')[1]);
                     level.pontos += valor;
                 }
             }
@@ -23,7 +23,7 @@ function atualiza_pontos(level) {
     });
 }
 !function() {
-    console.log("first var");
+    //console.log("first var");
     var level = {
         atual: 0,
         finalizar: false,
@@ -36,16 +36,13 @@ function atualiza_pontos(level) {
             level.registrarAcoes();
 
             level.inicializarMatrix();
-            console.log(level.matrix, "Matrix");
+            //console.log(level.matrix, "Matrix");
         },
 
         configurar: function() {
             //screen.orientation.lock('portrait');
-            console.log("Level Atual1 ",level.atual);
-
             jQuery('.step').css({ width: jQuery('body').width(), height: jQuery('body').width() });
             jQuery('.stepbox li').css({ width: jQuery('body').width() });
-
             level.ajustarTela();
         },
 
@@ -55,7 +52,7 @@ function atualiza_pontos(level) {
                 var visibleItem = true;
                 if(jQuery(this).hasClass('webform-conditional-hidden')){
                     visibleItem = false;
-                    console.log("falso!!!");
+                    //console.log("falso!!!");
                 }
                 level.matrix[k] = {
                     "id": jQuery(this).children('div').attr("id"),
@@ -67,8 +64,6 @@ function atualiza_pontos(level) {
         },
 
         registrarAcoes: function() {
-            console.log("registrarAcoes");
-            console.log("Level Atual2 ",level.atual);
             jQuery('.start').click(level.aoAbrirModal);
             jQuery('.btn-continue').click(level.aoFecharModal);
             jQuery('.play').on('click', level.aoIniciar);
@@ -178,32 +173,8 @@ function atualiza_pontos(level) {
         },
 
         proximaEtapa: function() {
-            console.log("Level Atual4 ",level.atual);
-
-            //Fluxo das perguntas
-            //if(level.atual == 0) {
-            //    if (jQuery("#edit-submitted-possui-estrategia-digital-2").is(':checked')) {
-            //        level.atual = 6;
-            //    }
-            //    else{
-            //        level.atual++;
-            //    }
-            //}
-            //else if(level.atual == 2){
-            //    if(jQuery("#edit-submitted-em-sua-estrategia-esta-prevista-a-utilizacao-de-conceitos-digital-para-alavancar-o-seu-negocio-2").is(':checked')){
-            //        level.atual = 4;
-            //    }
-            //    else{
-            //        level.atual++;
-            //    }
-            //}
-            //else if(level.atual == 7){
-            //
-            //}
-            //else{
-            //    level.atual++;
-            //}
-
+            //console.log("Level Atual4 ",level.atual);
+            console.log("MATRIXXXX PORRA");
             //Atualiza array
             var k = 0;
             atualiza_pontos(level);
@@ -211,7 +182,7 @@ function atualiza_pontos(level) {
                 var visibleItem = true;
                 if(jQuery(this).hasClass('webform-conditional-hidden')){
                     visibleItem = false;
-                    //console.log("falso!!!");
+                    ////console.log("falso!!!");
                 }
 
                 level.matrix[k] = {
@@ -221,17 +192,17 @@ function atualiza_pontos(level) {
                 };
                 k++;
             });
-            console.log(level.totalPossivel, "Total Possivel");
-            console.log(level.pontos, "Pontos Possivel");
-            console.log(level.matrix, "Matrix");
+            //console.log(level.totalPossivel, "Total Possivel");
+            //console.log(level.pontos, "Pontos Possivel");
+            //console.log(level.matrix, "Matrix");
 
             level.matrix.forEach(function(value){
-                console.log(value);
-                console.log("Level Atual pre upate: " + level.atual);
+                //console.log(value);
+                //console.log("Level Atual pre upate: " + level.atual);
                 if(value.seqItem > (level.atual + 4)){
                     if(value.status){
                         level.atual = value.seqItem - 4;
-                        console.log(level.atual,"LEvel atual");
+                        //console.log(level.atual,"LEvel atual");
                         level.matrix.length = 0;
                         return 0;
                     }
@@ -244,10 +215,11 @@ function atualiza_pontos(level) {
             jQuery('ul', '.stepbox').css(
                 { '-ms-transform': transition, '-webkit-transform': transition, 'transform': transition }
             );
+            jQuery('#level-' + ++level.atual).addClass('select');
         },
 
         aoAbrirModal: function() {
-            console.log("Level Atual5 ",level.atual);
+            //console.log("Level Atual5 ",level.atual);
             console.log("aoAbrirModal Start");
             jQuery('.modal-start, .section-first').toggleClass('open');
 
@@ -268,7 +240,7 @@ function atualiza_pontos(level) {
 
                 },
                 submitHandler: function(e) {
-                    console.log("submitHandler");
+                    //console.log("submitHandler");
                     jQuery("section.questions").show();
                     jQuery(".modal-start").removeClass('open'),
                         jQuery(".section-first").addClass('next'),
@@ -306,12 +278,12 @@ function atualiza_pontos(level) {
         },
 
         aoFecharModal: function() {
-            console.log("Level Atual",level.atual);
+            //console.log("Level Atual",level.atual);
             jQuery('.modal').removeClass('open');
         },
 
         aoIniciar: function() {
-            console.log("Level Atual6 ",level.atual);
+            //console.log("Level Atual6 ",level.atual);
 
             jQuery('#modal-' + jQuery(this).data('target')).addClass('open');
 
@@ -319,9 +291,12 @@ function atualiza_pontos(level) {
         },
 
         aoContinuar: function() {
+            //console.log("Ao Continuar");
             jQuery('.select').removeClass('select');
             jQuery(this).closest('.modal').removeClass('open');
-            jQuery('#level-' + $(this).data('next')).addClass('select');
+            //jQuery('#level-' + jQuery(this).data('next')).addClass('select');
+            console.log(jQuery(this).data('next'), "DataNext");
+            console.log(level.atual, "Level Atual");
             setTimeout(level.proximaEtapa, 150);
         }
     };
@@ -355,7 +330,7 @@ function atualiza_pontos(level) {
 
     }
     //screen.orientation.lock('portrait').catch(function() {
-    //    console.log('Orientation locked');
+    //    //console.log('Orientation locked');
     //});
 }();
 
@@ -365,21 +340,21 @@ jQuery(document).ready((function($){
         totalPossivel: 0,
     }
     var pathname = window.location.pathname.split('/');
-    console.log(pathname, "TECT");
+    //console.log(pathname, "TECT");
     if(pathname.length == 4){
         $("section.questions").hide();
-        //$("section.section-first").hide();
-        //$("#page").hide();
-        $('.result').hide();
-        $('.finish').hide();
+        $("section.section-first").hide();
+        $("#page").hide();
+        //$('.result').hide();
+        //$('.finish').hide();
         $('#page-top').hide();
         $('#skip-link').hide();
     }
     else{
         $("section.questions").hide();
-        //$("#page").hide();
-        $('.result').hide();
-        $('.finish').hide();
+        $("#page").hide();
+        //$('.result').hide();
+        //$('.finish').hide();
         $('#page-top').hide();
         $('#skip-link').hide();
     }
@@ -402,6 +377,7 @@ jQuery(document).ready((function($){
     $('.btn-possui-alguma-iniciativa-relacionada-a').bind('click',function() {
         jQuery('.preloader').show();
         $('.webform-submit').click();
+        //console.log("submit");
 
     });
 
@@ -409,25 +385,26 @@ jQuery(document).ready((function($){
 
 
     $("input[id^=edit-submitted]").each(function(value){
-        //console.log($(this).attr("id"));
+        ////console.log($(this).attr("id"));
         //matrix[k] = {
         //    "id": $(this).attr("id"),
         //    "status":  $(this).css('display')
         //};
         var modalValue = $(this).attr("id").replace("edit-submitted-","modalfront-");
         var drupalValue = $(this).attr("id");
-        console.log("Modal Value",modalValue);
+        //console.log("Modal Value",modalValue);
         $("#" + modalValue).on('keypress keyup blur click change',function() {
-            console.log("CLICK!!");
+            //console.log("CLICK!!");
             var valor = 0;
+            $("#" + drupalValue).click();
             $("#" + drupalValue).prop("checked", true).trigger("change");
             valor = $("#" + drupalValue).val();
-            console.log(valor, "valor do item");
+            //console.log(valor, "valor do item");
 
             atualiza_pontos(level);
-            console.log(level.totalPossivel, "Total Possivel");
-            console.log(level.pontos, "Pontos");
-            console.log(Math.floor(level.pontos/level.totalPossivel*100), "Porcentagem");
+            //console.log(level.totalPossivel, "Total Possivel");
+            //console.log(level.pontos, "Pontos");
+            //console.log(Math.floor(level.pontos/level.totalPossivel*100), "Porcentagem");
             jQuery(".loaderbar").attr("style", "width: "+ Math.floor(level.pontos/level.totalPossivel*100) +"%");
         });;
     });
@@ -435,21 +412,21 @@ jQuery(document).ready((function($){
 
 })(jQuery));
 
-jQuery('.count').each(function () {
-    jQuery(this).prop('Counter',0).animate({
-        Counter: jQuery(this).text(),
-    }, {
-        duration: 7000,
-        easing: 'swing',
-        step: function (now) {
-            jQuery(this).text(Math.ceil(now));
-        }
-    });
-
-});
+// jQuery('.count').each(function () {
+//     jQuery(this).prop('Counter',0).animate({
+//         Counter: jQuery(this).text(),
+//     }, {
+//         duration: 7000,
+//         easing: 'swing',
+//         step: function (now) {
+//             jQuery(this).text(Math.ceil(now));
+//         }
+//     });
+//
+// });
 
 jQuery('.recomendar').on('click', function() {
-
+    console.log("recomendar");
     var scrollAnchor = jQuery(this).attr('data-scroll'),
         scrollPoint = jQuery('section[data-anchor="' + scrollAnchor + '"]').offset().top + 100;
 

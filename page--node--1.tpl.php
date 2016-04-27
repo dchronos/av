@@ -66,196 +66,6 @@
  * - $page['footer']: Items for the footer region.
  */
 ?>
-<!-- PRELOADER -->
-<div class="preloader">
-  <div class="loader">
-    <div class="circle one"></div>
-    <div class="circle two"></div>
-    <div class="circle three"></div>
-  </div>
-  <span class="logo-icon"></span>
-</div><!-- end.preloader
-
-<!-- FIRST -->
-<section class="section-first">
-
-  <h1 class="logo">Resource IT Solutions</h1>
-  <h2 class="logo-avaliacao">Avaliação Digital</h2>
-  <span class="parallax"></span>
-  <a href="javascript:void(0);" class="start go">start</a>
-  <svg class="go" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 284 103">
-    <path stroke-width="1" d="M816.988,958.822V902.915l19.7-19.764H844.1l18.107-18.16H1070.83l12.08,12.107v30.268l18.1,18.161-42.33,42.464H999.741l-12.072-12.107H880.536l-7.631,7.656H821.689Z" transform="translate(-817 -865)"/>
-  </svg>
-
-  <div class="small-6 columns past">
-    <figure class="ilustra"></figure>
-    <div class="elements">
-      <div class="parallax-1"></div>
-      <div class="parallax-2"></div>
-      <div class="parallax-3"></div>
-      <div class="parallax-4"></div>
-      <div class="parallax-5"></div>
-      <div class="parallax-6"></div>
-      <div class="last-parallax"></div>
-      <canvas id="aguia" width="550" height="400"></canvas>
-    </div>
-    <figure class="ilustra"></figure>
-  </div><!-- end.past -->
-
-  <div class="small-6 columns future">
-    <div class="elements">
-      <div class="parallax-1"></div>
-      <div class="parallax-2"></div>
-      <div class="parallax-3"></div>
-      <div class="parallax-4"></div>
-      <div class="parallax-5"></div>
-      <div class="parallax-6"></div>
-      <div class="parallax-7"></div>
-      <div class="parallax-8"></div>
-    </div>
-    <figure class="ilustra"></figure>
-  </div><!-- end.future -->
-
-</section><!-- end.row -->
-<!-- END FIRST -->
-
-<!-- MAIN -->
-<section class="main levels">
-
-  <article class="main-top">
-    <h2> <span></span></h2>
-  </article>
-
-  <div class="main-parallax"></div>
-
-  <div class="stepbox">
-
-    <span class="pin-animate">
-                <canvas id="ninja" width="663" height="483"></canvas>
-            </span>
-
-    <ul>
-      <li class="select" id="level-1">
-        <a href="#" class="play" data-target="1"></a>
-        <div class="step step1">
-          <span class="cloud parallax-1"></span>
-        </div>
-      </li>
-
-      <li id="level-2">
-        <a href="#" class="play" data-target="2"></a>
-        <div class="step step2">
-          <span class="cloud parallax-1"></span>
-        </div>
-      </li>
-
-      <li id="level-3">
-        <a href="#" class="play" data-target="3"></a>
-        <div class="step step3">
-          <span class="cloud parallax-1"></span>
-        </div>
-      </li>
-
-      <li id="level-4">
-        <a href="#" class="play" data-target="4"></a>
-        <div class="step step4">
-          <span class="cloud parallax-1"></span>
-        </div>
-      </li>
-
-      <li id="level-5">
-        <a href="#" class="play" data-target="5"></a>
-        <div class="step step5">
-          <span class="cloud parallax-1"></span>
-        </div>
-      </li>
-
-      <li id="level-6">
-        <a href="#" class="play" data-target="6"></a>
-        <div class="step step6">
-          <span class="cloud parallax-1"></span>
-        </div>
-      </li>
-
-      <li id="level-7">
-        <a href="#" class="play" data-target="7"></a>
-        <div class="step step7">
-          <span class="cloud parallax-1"></span>
-        </div>
-      </li>
-
-      <li id="level-8">
-        <a href="#" class="play" data-target="8"></a>
-        <div class="step step8">
-          <span class="future parallax-1"></span>
-          <span class="future parallax-2"></span>
-        </div>
-      </li>
-    </ul>
-
-  </div><!-- end.stepbox -->
-
-  <article class="main-bottom">
-    <span class="pin"></span>
-
-    <div class="powerbar">
-
-      <label>Power</label>
-                <span class="bar">
-                    <div class="loader loaderbar" style="width: 5%;">
-                      <span></span>
-                    </div>
-                </span><!-- end.bar -->
-
-    </div><!-- end.powerbar -->
-
-  </article><!-- end.main-bottom -->
-
-</section>
-<!-- END MAIN -->
-
-
-<!-- MODAL START -->
-<aside class="modal modal-start">
-
-  <form class="modal-form" id="cadastroForm" autocomplete="off">
-
-    <h3>Sua empresa é digital?<br>Você vai descobrir.</h3>
-
-    <div class="input-group">
-      <input class="field" type="text" name="player" tabindex="1">
-      <label><span class="label-content">Player 1</span></label>
-    </div><!-- end.input-group -->
-
-    <div class="input-group">
-      <input class="field" type="text" name="empresa" tabindex="2">
-      <label><span class="label-content">Empresa</span></label>
-    </div><!-- end.input-group -->
-
-    <div class="input-group">
-      <input class="field" type="text" name="whatsapp" tabindex="3" id="whatsapp">
-      <label><span class="label-content">Whatsapp</span></label>
-    </div><!-- end.input-group -->
-
-    <div class="input-group">
-      <input class="field" type="text" name="email" tabindex="4">
-      <label><span class="label-content">Email</span></label>
-    </div><!-- end.input-group -->
-
-    <button class="btn-start" tabindex="5">
-      <span>Começar</span>
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 153 43">
-        <g>
-          <path d="M132.2,43H2V27.9l3.9-3.8V7.3l5.7-5.5h133.1l-6,7.1v27.6L132.2,43z M3.8,41.2h127.7l5.4-5.4V8.3l3.9-4.6H12.3
-                            L7.8,8.1v16.7l-3.9,3.8V41.2z">
-        </g>
-      </svg>
-    </button>
-
-  </form>
-
-</aside>
-<!-- END MODAL START -->
 
 
 
@@ -318,6 +128,7 @@ if(isset($node->webform['components'])) {
         print '<a href="javascript:void(0);" class="btn-start ' . $class_btn . '"><span>Finalizar</span>';
       } else {
         print '  <a href="javascript:void(0);" class="btn-start btn-continue" data-next="'. $datanext .'"><span>Continuar</span>';
+        $datanext++;
       }
       print '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 153 43">';
       print '<g>';
@@ -338,17 +149,17 @@ if(isset($node->webform['components'])) {
 $path_args = arg();
 //dsm($path_args, "args");
 $argumentos = count($path_args);
-if($argumentos == 3){
+if($argumentos == 3) {
   $nid = arg(1); // need to hard-code nid if this is a custom page
   $sid = $_GET['sid'];
   $submission = webform_get_submission($nid, $sid);
   //dsm($submission, "Submission");
   $total = 0;
-  $count =0;
+  $count = 0;
   foreach ($submission->data as $k => $v) {
-    if($count > 3) {
-      if(count($v) > 1){
-        foreach($v as $j){
+    if ($count > 3) {
+      if (count($v) > 1) {
+        foreach ($v as $j) {
           $valor = explode("_", $j);
           if (count($valor) > 1) {
             $total += $valor[1];
@@ -356,8 +167,7 @@ if($argumentos == 3){
             $total += $valor[0];
           }
         }
-      }
-      else {
+      } else {
         $valor = explode("_", $v[0]);
         if (count($valor) > 1) {
           $total += $valor[1];
@@ -367,7 +177,7 @@ if($argumentos == 3){
       }
       //dsm($valor, "item");
     }
-    $count ++;
+    $count++;
   }
   //dsm($total,"total");
   //dsm(get_defined_vars(), "VARSS");
@@ -377,16 +187,15 @@ if($argumentos == 3){
   //dsm($node, "Node");
   $count = 0;
   $somaDeTotais = 0;
-  foreach($node->webform['components'] as $k => $v){
-    if($count > 3){
-      if($v['extra']['multiple']){
-        $itens = explode(PHP_EOL,$v['extra']['items']);
-        foreach($itens as $k => $v){
+  foreach ($node->webform['components'] as $k => $v) {
+    if ($count > 3) {
+      if ($v['extra']['multiple']) {
+        $itens = explode(PHP_EOL, $v['extra']['items']);
+        foreach ($itens as $k => $v) {
           $somaDeTotais += explode("_", explode("|", $v)[0])[1];
           //dsm($itensValor, "Valores dos mutiplos");
         }
-      }
-      else{
+      } else {
         $somaDeTotais += explode("|", explode(PHP_EOL, $v['extra']['items'])[0])[0];
       }
     }
@@ -396,54 +205,52 @@ if($argumentos == 3){
   //print "soma total é: ". $somaDeTotais . " pontos <br/>";
   //print "pontos cadastrados é: " . $total ." pontos <br />";
 
-  $porcentagem = intval($total/$somaDeTotais * 100);
+  $porcentagem = intval($total / $somaDeTotais * 100);
 
-  if($porcentagem < 25){
+  if ($porcentagem < 25) {
     $ninja = "amateur";
     $recomendacao = "Você é especialista em seu segmento e podemos ajudar apoiando desde a estratégia digital de sua empresa até a implementação com produtos e serviços que podem suportar a inovação de seu negócio.
 
 Portfolio Resource Digital: CRM, eCommerce, Marketing Digital, BI/BA, Big Data, Mobilidade, iOT, Design Thinking e Gestão do Conhecimento.";
-  }
-  else if($porcentagem < 50){
+  } else if ($porcentagem < 50) {
     $ninja = "medium";
     $recomendacao = "Legal! Você já deu os primeiros passos no mundo digital, podemos ajudar a acelerar o processo de inovação com nossos produtos e serviços.
 
 Portfólio Resource Resource Digital: CRM, eCommerce, Marketing Digital, BI/BA, Big Data, Mobilidade, iOT, Design Thinking e Gestão do Conhecimento.";
-  }
-  else if($porcentagem < 75){
+  } else if ($porcentagem < 75) {
     $ninja = "medium";
     $recomendacao = "Ótimo! Sua empresa está no caminho certo, o caminho digital. Quer apoio de um parceiro? Conte conosco.
 
 Portfólio Resource Digital: CRM, eCommerce, Marketing Digital, BI/BA, Big Data, Mobilidade, iOT, Design Thinking e Gestão do Conhecimento.";
-  }
-  else{
+  } else {
     $ninja = "hard";
     $recomendacao = "Sensacional! Você é Digital, lembre-se, continue inovando sempre, esteja sempre à frente da concorrência e conte com a Resource como parceiro de negócio.
 
 Portfólio Resource Digital: CRM, eCommerce, Marketing Digital, BI/BA, Big Data, Mobilidade, iOT, Design Thinking e Gestão do Conhecimento.
 ";
   }
-}
+
 //dsm($node, "vars");
 //dsm($page, "PAGES");
 
-?>
-<!-- MAIN Result -->
-<section class="main result <?php print $ninja ?>"><!-- Adicionando as classes amateur, medium ou hard muda o nivel do ninja -->
+  ?>
+  <!-- MAIN Result -->
+  <section class="main result <?php print $ninja ?>">
+    <!-- Adicionando as classes amateur, medium ou hard muda o nivel do ninja -->
 
-  <article class="main-top">
-    <div class="score"><h3>Score <span><b class="count"><?php print $porcentagem;?></b> pts</span></h3></div>
+    <article class="main-top">
+      <div class="score"><h3>Score <span><b class="count"><?php print $porcentagem; ?></b> pts</span></h3></div>
 
-    <div class="figures">
-      <figure>Profissional</figure>
-    </div><!-- end.figures -->
+      <div class="figures">
+        <figure>Profissional</figure>
+      </div><!-- end.figures -->
 
-  </article><!-- end.main-top -->
+    </article><!-- end.main-top -->
 
 
-  <article class="main-bottom">
+    <article class="main-bottom">
 
-    <div class="powerbar">
+      <div class="powerbar">
 
                 <span class="bar">
                     <div class="result-loader loader">
@@ -451,29 +258,238 @@ Portfólio Resource Digital: CRM, eCommerce, Marketing Digital, BI/BA, Big Data,
                     </div>
                 </span><!-- end.bar -->
 
-    </div><!-- end.powerbar -->
+      </div><!-- end.powerbar -->
 
-    <div class="content">
-      <p>Você já deu os primeiros passos, conte com a Resource Digital para avançar!</p>
-      <a href="#" class="btn-start recomendar" data-scroll="recomendacoes">Recomendações</a>
-      <span class="scroll bounce">Down</span>
+      <div class="content">
+        <h4>Shooow!!! Você é um ninja digital</h4>
+        <p>Você já deu os primeiros passos, conte com a Resource Digital para avançar!</p>
+        <a href="#" class="btn-start recomendar" data-scroll="recomendacoes">Recomendações</a>
+        <span class="scroll bounce">Down</span>
+      </div>
+
+    </article><!-- end.main-bottom -->
+
+  </section>
+  <!-- END MAIN -->
+
+  <!-- FINISH SECTION -->
+  <section class="main finish" data-anchor="recomendacoes">
+    <article>
+      <h3>A Resource é<span>Digital</span></h3>
+      <p class="sub">Veja como podemos<br>te ajudar</p>
+      <p><?php print $recomendacao ?></p>
+      <a href="<?php print '/node/' . $path_args[1] ?>" class="btn-start">
+        <span>Iniciar Novo</span>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 153 43">
+          <g>
+            <path d="M132.2,43H2V27.9l3.9-3.8V7.3l5.7-5.5h133.1l-6,7.1v27.6L132.2,43z M3.8,41.2h127.7l5.4-5.4V8.3l3.9-4.6H12.3
+                            L7.8,8.1v16.7l-3.9,3.8V41.2z">
+          </g>
+        </svg>
+      </a>
+    </article>
+  </section>
+  <!-- FINISH SECTION -->
+  <?php
+}
+else {
+  ?>
+
+  <!-- PRELOADER -->
+  <div class="preloader">
+    <div class="loader">
+      <div class="circle one"></div>
+      <div class="circle two"></div>
+      <div class="circle three"></div>
     </div>
+    <span class="logo-icon"></span>
+  </div><!-- end.preloader
 
-  </article><!-- end.main-bottom -->
+<!-- FIRST -->
+  <section class="section-first">
 
-</section>
-<!-- END MAIN -->
+    <h1 class="logo">Resource IT Solutions</h1>
+    <h2 class="logo-avaliacao">Avaliação Digital</h2>
+    <span class="parallax"></span>
+    <a href="javascript:void(0);" class="start go">start</a>
+    <svg class="go" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 284 103">
+      <path stroke-width="1"
+            d="M816.988,958.822V902.915l19.7-19.764H844.1l18.107-18.16H1070.83l12.08,12.107v30.268l18.1,18.161-42.33,42.464H999.741l-12.072-12.107H880.536l-7.631,7.656H821.689Z"
+            transform="translate(-817 -865)"/>
+    </svg>
 
-<!-- FINISH SECTION -->
-<section class="main finish" data-anchor="recomendacoes">
-  <h3>A Resource é<span>Digital</span></h3>
-  <p class="sub">Veja como podemos<br>te ajudar</p>
-  <p><?php print $recomendacao?></p>
-  <a href="<?php print '/node/' . $path_args[1]?>" class="btn-start">Iniciar Novo</a>
-</section>
-<!-- FINISH SECTION -->
+    <div class="small-6 columns past">
+      <figure class="ilustra"></figure>
+      <div class="elements">
+        <div class="parallax-1"></div>
+        <div class="parallax-2"></div>
+        <div class="parallax-3"></div>
+        <div class="parallax-4"></div>
+        <div class="parallax-5"></div>
+        <div class="parallax-6"></div>
+        <div class="last-parallax"></div>
+        <canvas id="aguia" width="550" height="400"></canvas>
+      </div>
+      <figure class="ilustra"></figure>
+    </div><!-- end.past -->
+
+    <div class="small-6 columns future">
+      <div class="elements">
+        <div class="parallax-1"></div>
+        <div class="parallax-2"></div>
+        <div class="parallax-3"></div>
+        <div class="parallax-4"></div>
+        <div class="parallax-5"></div>
+        <div class="parallax-6"></div>
+        <div class="parallax-7"></div>
+        <div class="parallax-8"></div>
+      </div>
+      <figure class="ilustra"></figure>
+    </div><!-- end.future -->
+
+  </section><!-- end.row -->
+  <!-- END FIRST -->
+
+  <!-- MAIN -->
+  <section class="main levels">
+
+    <article class="main-top">
+      <h2><span></span></h2>
+    </article>
+
+    <div class="main-parallax"></div>
+
+    <div class="stepbox">
+
+    <span class="pin-animate">
+                <canvas id="ninja" width="663" height="483"></canvas>
+            </span>
+
+      <ul>
+        <li class="select" id="level-1">
+          <a href="#" class="play" data-target="1"></a>
+          <div class="step step1">
+            <span class="cloud parallax-1"></span>
+          </div>
+        </li>
+
+        <li id="level-2">
+          <a href="#" class="play" data-target="2"></a>
+          <div class="step step2">
+            <span class="cloud parallax-1"></span>
+          </div>
+        </li>
+
+        <li id="level-3">
+          <a href="#" class="play" data-target="3"></a>
+          <div class="step step3">
+            <span class="cloud parallax-1"></span>
+          </div>
+        </li>
+
+        <li id="level-4">
+          <a href="#" class="play" data-target="4"></a>
+          <div class="step step4">
+            <span class="cloud parallax-1"></span>
+          </div>
+        </li>
+
+        <li id="level-5">
+          <a href="#" class="play" data-target="5"></a>
+          <div class="step step5">
+            <span class="cloud parallax-1"></span>
+          </div>
+        </li>
+
+        <li id="level-6">
+          <a href="#" class="play" data-target="6"></a>
+          <div class="step step6">
+            <span class="cloud parallax-1"></span>
+          </div>
+        </li>
+
+        <li id="level-7">
+          <a href="#" class="play" data-target="7"></a>
+          <div class="step step7">
+            <span class="cloud parallax-1"></span>
+          </div>
+        </li>
+
+        <li id="level-8">
+          <a href="#" class="play" data-target="8"></a>
+          <div class="step step8">
+            <span class="future parallax-1"></span>
+            <span class="future parallax-2"></span>
+          </div>
+        </li>
+      </ul>
+
+    </div><!-- end.stepbox -->
+
+    <article class="main-bottom">
+      <span class="pin"></span>
+
+      <div class="powerbar">
+
+        <label>Power</label>
+                <span class="bar">
+                    <div class="loader loaderbar" style="width: 5%;">
+                      <span></span>
+                    </div>
+                </span><!-- end.bar -->
+
+      </div><!-- end.powerbar -->
+
+    </article><!-- end.main-bottom -->
+
+  </section>
+  <!-- END MAIN -->
 
 
+  <!-- MODAL START -->
+  <aside class="modal modal-start">
+
+    <form class="modal-form" id="cadastroForm" autocomplete="off">
+
+      <h3>Sua empresa é digital?<br>Você vai descobrir.</h3>
+
+      <div class="input-group">
+        <input class="field" type="text" name="player" tabindex="1">
+        <label><span class="label-content">Player 1</span></label>
+      </div><!-- end.input-group -->
+
+      <div class="input-group">
+        <input class="field" type="text" name="empresa" tabindex="2">
+        <label><span class="label-content">Empresa</span></label>
+      </div><!-- end.input-group -->
+
+      <div class="input-group">
+        <input class="field" type="text" name="whatsapp" tabindex="3" id="whatsapp">
+        <label><span class="label-content">Whatsapp</span></label>
+      </div><!-- end.input-group -->
+
+      <div class="input-group">
+        <input class="field" type="text" name="email" tabindex="4">
+        <label><span class="label-content">Email</span></label>
+      </div><!-- end.input-group -->
+
+      <button class="btn-start" tabindex="5">
+        <span>Começar</span>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 153 43">
+          <g>
+            <path d="M132.2,43H2V27.9l3.9-3.8V7.3l5.7-5.5h133.1l-6,7.1v27.6L132.2,43z M3.8,41.2h127.7l5.4-5.4V8.3l3.9-4.6H12.3
+                            L7.8,8.1v16.7l-3.9,3.8V41.2z">
+          </g>
+        </svg>
+      </button>
+
+    </form>
+
+  </aside>
+  <!-- END MODAL START -->
+  <?php
+}
+?>
 <div id="page" class="page">
   <div id="page-inner" class="page-inner">
     <?php print render($page['header_top']); ?>
@@ -572,6 +588,10 @@ Portfólio Resource Digital: CRM, eCommerce, Marketing Digital, BI/BA, Big Data,
     <?php print render($page['footer']); ?>
   </div><!-- /page-inner -->
 </div><!-- /page -->
+
+
+
+
 
 <script src="/sites/all/themes/avaliacao_digital/library/js/libs/jquery.min.js"></script>
 <script src="/sites/all/themes/avaliacao_digital/library/js/libs/create.min.js"></script>
