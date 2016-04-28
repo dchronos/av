@@ -215,7 +215,8 @@ function atualiza_pontos(level) {
             jQuery('ul', '.stepbox').css(
                 { '-ms-transform': transition, '-webkit-transform': transition, 'transform': transition }
             );
-            jQuery('#level-' + ++level.atual).addClass('select');
+            var lvl = level.atual + 1;
+            jQuery('#level-' + lvl).addClass('select');
         },
 
         aoAbrirModal: function() {
@@ -227,7 +228,7 @@ function atualiza_pontos(level) {
             jQuery("#cadastroForm").validate({
                 rules: {
                     email: {
-                        //required: true,
+                        required: true,
                         email: true
                     },
                     /*whatsapp: {
@@ -235,7 +236,7 @@ function atualiza_pontos(level) {
                      },*/
                 },
                 messages: {
-                    email: "teste",
+                    email: "t",
                     //whatsapp: "",
 
                 },
