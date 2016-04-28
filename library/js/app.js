@@ -75,59 +75,59 @@ function atualiza_pontos(level) {
             jQuery('.stepbox ul').width(calcWidth);
             jQuery('.preloader').delay(1000).fadeOut('slow');
 
-            jQuery('.elements .parallax-1').delay(5200).animate({bottom: '-1px'});
+            jQuery('.elements .parallax-1').delay(200).animate({bottom: '-1px'});
             setTimeout(function () {
                 jQuery('.section-first .parallax, .logo-avaliacao').addClass('animate');
-            }, 5100);
+            }, 1100);
             setTimeout(function () {
                 jQuery('.section-first').addClass('go');
-            }, 5400);
+            }, 1400);
 
             //FUTURE ANIMATE
-            jQuery('.future .elements .parallax-2, .future .elements .parallax-3').delay(5000).animate({bottom: '30px'});
-            jQuery('.future .elements .parallax-4').delay(5300).animate({bottom: '130px'});
-            jQuery('.future .elements .parallax-5').delay(5300).animate({bottom: '120px'});
-            jQuery('.future .elements .parallax-6').delay(5300).animate({bottom: '220px'});
+            jQuery('.future .elements .parallax-2, .future .elements .parallax-3').delay(1000).animate({bottom: '30px'});
+            jQuery('.future .elements .parallax-4').delay(1300).animate({bottom: '130px'});
+            jQuery('.future .elements .parallax-5').delay(1300).animate({bottom: '120px'});
+            jQuery('.future .elements .parallax-6').delay(1300).animate({bottom: '220px'});
             setTimeout(function () {
                 jQuery('.parallax-7, .parallax-8').addClass('animate');
-            }, 8300);
+            }, 100);
             setTimeout(function () {
                 jQuery('.future .ilustra').addClass('animate');
-            }, 5300);
+            }, 100);
 
             //PAST ANIMATE
-            jQuery('.past .elements .parallax-2').delay(5300).animate({bottom: '25px'});
-            jQuery('.past .elements .parallax-3').delay(5300).animate({bottom: '100px'});
-            jQuery('.past .elements .parallax-4').delay(5300).animate({bottom: '165px'});
-            jQuery('.past .elements .parallax-5, .past .elements .parallax-6').delay(5300).animate({bottom: '140px'});
-            jQuery('.past .elements .last-parallax').delay(5300).animate({bottom: '240px'});
+            jQuery('.past .elements .parallax-2').delay(1300).animate({bottom: '25px'});
+            jQuery('.past .elements .parallax-3').delay(1300).animate({bottom: '100px'});
+            jQuery('.past .elements .parallax-4').delay(1300).animate({bottom: '165px'});
+            jQuery('.past .elements .parallax-5, .past .elements .parallax-6').delay(1300).animate({bottom: '140px'});
+            jQuery('.past .elements .last-parallax').delay(1300).animate({bottom: '240px'});
             setTimeout(function () {
                 jQuery('.past').addClass('animate');
-            }, 5300);
+            }, 100);
             setTimeout(function () {
                 jQuery('.past .ilustra').addClass('animate');
-            }, 5300);
+            }, 100);
             setTimeout(function () {
                 jQuery('#aguia').addClass('animate');
-            }, 6300);
+            }, 100);
 
 
 
-            jQuery('.preloader-result').delay(1000).fadeOut('slow');
-            jQuery('.result-loader').delay(400).animate({width: porcentagem + '%'});
+            jQuery('.preloader-result').delay(3000).fadeOut('slow');
+            jQuery('.result-loader').delay(1400).animate({width: porcentagem + '%'});
 
-            jQuery('.result .content, .finish article').delay(7000).animate({opacity: '1', transition: 'opacity .2s ease-out' });
+            jQuery('.result .content, .finish article').delay(1000).animate({opacity: '1', transition: 'opacity .2s ease-out' });
             setTimeout(function () {
                 jQuery('.figures').addClass('open');
-            }, 6500);
+            }, 1500);
             setTimeout(function () {
                 jQuery('.figures figure').addClass('down');
-            }, 6600);
+            }, 1600);
             jQuery('.count').each(function () {
                 jQuery(this).prop('Counter',0).animate({
                     Counter: jQuery(this).text(),
                 }, {
-                    duration: 7000,
+                    duration: 3000,
                     easing: 'swing',
                     step: function (now) {
                         jQuery(this).text(Math.ceil(now));
@@ -166,10 +166,10 @@ function atualiza_pontos(level) {
             //$('.figures figure').delay(5400).animate({transform: transforms, opacity: '1'});
             setTimeout(function () {
                 jQuery('.figures').addClass('open');
-            }, 6500);
+            }, 500);
             setTimeout(function () {
                 jQuery('.figures figure').addClass('down');
-            }, 6600);
+            }, 600);
         },
 
         proximaEtapa: function() {
